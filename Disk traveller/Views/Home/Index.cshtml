@@ -1,0 +1,31 @@
+﻿ <div ng-controller="HomeController">
+    {{Message}}
+    <div class="drives">
+        <a ng-repeat="drive in drives" ng-click="AskFolders(drive);" >{{drive}}</a>
+    </div> 
+
+     <div ng-if="current" class="current">
+         <span>{{current}}</span>
+     </div>
+     <div class="count">
+         <div class="countitem">
+             <h5>0-10mb</h5>
+             <p>{{count.f010}}</p>
+          </div>
+         <div class="countitem">
+             <h5>10-50mb</h5>
+             <p>{{count.f1050}}</p>
+          </div>
+         <div class="countitem">
+             <h5>100+mb</h5>
+             <p>{{count.f100}}</p>
+          </div>
+     </div>
+    <div ng-if="up" class="folders">
+        <a ng-click="AskFolders(up);" >..</a>
+
+        <a ng-repeat="(key, data) in folders" ng-click="AskFolders(data);" >{{key}}</a>
+        <a class="file" ng-repeat="(key, data) in files">{{key}}</a>
+
+    </div> 
+</div>
